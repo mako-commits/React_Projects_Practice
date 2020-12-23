@@ -1,25 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useGlobalContext } from './context'
 
-// const Submenu = () => {
-//   const { isSubmenuOpen, location, } = useGlobalContext()
-//   const container = useRef(null)
-//   useEffect(() => {
-//     const submenu = container.current
-//     const { center, bottom } = location
-//     submenu.style.left = `${center}px`
-//     submenu.style.top = `${bottom}px`
-//   }, [location])
-//   return (
-//     <aside className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`} ref={container}>
-//       sub
-//     </aside>
-//   )
-// }
-
-// export default Submenu
-
-
 const Submenu = () => {
   const {
     isSubmenuOpen,
@@ -41,7 +22,7 @@ const Submenu = () => {
     if (links.length > 3) {
       setColumns('col-4')
     }
-  }, [location, page, links])
+  }, [page, location, links])
   return (
     <aside
       className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}
@@ -61,7 +42,7 @@ const Submenu = () => {
           })}
         </div>
       </section>
-    </aside >
+    </aside>
   )
 }
 
